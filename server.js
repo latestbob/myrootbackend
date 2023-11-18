@@ -39,7 +39,7 @@ app.post('/api/send', async (req, res) => {
 
   let mailOptions = {
     from: 'twebresolve@jumping-rivers.co.uk',
-    to: 'Rm360.101@yandex.com',
+    to: 'Rm360.202@gmail.com',
     subject: "ffin",
     html: `
       <html>
