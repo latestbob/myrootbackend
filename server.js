@@ -23,7 +23,7 @@ app.post('/api/send', async (req, res) => {
 
     const { name, email, subject, message } = req.body;
 
-    let recipientEmail = 'edidiongbobson@gmail.com';
+    let recipientEmail = 'info@opdrive.com.ng';
 
   
 
